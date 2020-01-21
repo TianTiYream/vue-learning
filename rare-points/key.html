@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>input的key属性</title>
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <div v-if="loginType==='userName'">
+      <span>userName:</span>
+      <input type="text" key="userName">
+    </div>
+    <div v-else>
+      <span>email:</span>
+      <input type="text" key="email">
+    </div>
+    <button @click="toggle">toggleType</button>
+  </div>
+  <script>
+    new Vue ({
+      el: '#app',
+      data: {
+        loginType: 'userName'
+      },
+      methods: {
+        toggle() {
+          this.loginType = this.loginType === 'userName' ? 'email' : 'userName'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
